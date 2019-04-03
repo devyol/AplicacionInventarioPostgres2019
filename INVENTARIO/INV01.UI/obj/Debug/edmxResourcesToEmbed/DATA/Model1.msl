@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="INVENTARIOModelStoreContainer" CdmEntityContainer="INVENTARIOEntities">
+    <EntitySetMapping Name="inv01_usuario">
+      <EntityTypeMapping TypeName="INVENTARIOModel.inv01_usuario">
+        <MappingFragment StoreEntitySet="inv01_usuario">
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
+          <ScalarProperty Name="usuario_creacion" ColumnName="usuario_creacion" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="usuario_modificacion" ColumnName="usuario_modificacion" />
+          <ScalarProperty Name="fecha_modificacion" ColumnName="fecha_modificacion" />
+          <ScalarProperty Name="usuario_bloqueo" ColumnName="usuario_bloqueo" />
+          <ScalarProperty Name="fecha_bloqueo" ColumnName="fecha_bloqueo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

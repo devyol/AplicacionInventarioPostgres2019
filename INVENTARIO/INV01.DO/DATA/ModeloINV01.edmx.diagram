@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="159703cfd0dc4728870bbaf0048c1bc5" Name="Diagram1">
+        <EntityTypeShape EntityType="INVENTARIOModelo.inv01_bitacora_producto" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="INVENTARIOModelo.inv01_categoria" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="INVENTARIOModelo.inv01_cliente" Width="1.5" PointX="16" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="INVENTARIOModelo.inv01_envio_detalle" Width="1.5" PointX="15.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="INVENTARIOModelo.inv01_envio_encabezado" Width="1.5" PointX="18.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="INVENTARIOModelo.inv01_inventario" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="INVENTARIOModelo.inv01_inventario_movimiento" Width="1.5" PointX="8.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="INVENTARIOModelo.inv01_movimiento" Width="1.5" PointX="13" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="INVENTARIOModelo.inv01_producto" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="INVENTARIOModelo.inv01_producto_perdida" Width="1.5" PointX="5.25" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="INVENTARIOModelo.inv01_rol" Width="1.5" PointX="13.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="INVENTARIOModelo.inv01_tipo_mov_inventario" Width="1.5" PointX="6" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="INVENTARIOModelo.inv01_tipo_movimiento" Width="1.5" PointX="10.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="INVENTARIOModelo.inv01_tipo_pago" Width="1.5" PointX="10.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="INVENTARIOModelo.inv01_usuario" Width="1.5" PointX="10.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INVENTARIOModelo.inv01_usuario_correlativo" Width="1.5" PointX="13" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INVENTARIOModelo.inv01_usuario_rol" Width="1.5" PointX="16" PointY="13.125" IsExpanded="true" />
+        <AssociationConnector Association="INVENTARIOModelo.fk_pd_ct" ManuallyRouted="false" />
+        <AssociationConnector Association="INVENTARIOModelo.fk_ee_cl" ManuallyRouted="false" />
+        <AssociationConnector Association="INVENTARIOModelo.fk_ed_en" ManuallyRouted="false" />
+        <AssociationConnector Association="INVENTARIOModelo.fk_ed_pr" ManuallyRouted="false" />
+        <AssociationConnector Association="INVENTARIOModelo.fk_ee_mov" ManuallyRouted="false" />
+        <AssociationConnector Association="INVENTARIOModelo.fk_inv_pr" ManuallyRouted="false" />
+        <AssociationConnector Association="INVENTARIOModelo.fk_mi_pr" ManuallyRouted="false" />
+        <AssociationConnector Association="INVENTARIOModelo.fk_mi_tmi" ManuallyRouted="false" />
+        <AssociationConnector Association="INVENTARIOModelo.fk_tm_mov" ManuallyRouted="false" />
+        <AssociationConnector Association="INVENTARIOModelo.fk_tp_mov" ManuallyRouted="false" />
+        <AssociationConnector Association="INVENTARIOModelo.fk_pp_pr" ManuallyRouted="false" />
+        <AssociationConnector Association="INVENTARIOModelo.fk_ur_rol" ManuallyRouted="false" />
+        <AssociationConnector Association="INVENTARIOModelo.fk_uc_us" ManuallyRouted="false" />
+        <AssociationConnector Association="INVENTARIOModelo.fk_ur_us" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

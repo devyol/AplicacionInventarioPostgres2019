@@ -1,0 +1,554 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="INVENTARIOModelo" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EntitiesINV01" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="inv01_bitacora_producto" EntityType="INVENTARIOModelo.inv01_bitacora_producto" />
+    <EntitySet Name="inv01_categoria" EntityType="INVENTARIOModelo.inv01_categoria" />
+    <EntitySet Name="inv01_cliente" EntityType="INVENTARIOModelo.inv01_cliente" />
+    <EntitySet Name="inv01_envio_detalle" EntityType="INVENTARIOModelo.inv01_envio_detalle" />
+    <EntitySet Name="inv01_envio_encabezado" EntityType="INVENTARIOModelo.inv01_envio_encabezado" />
+    <EntitySet Name="inv01_inventario" EntityType="INVENTARIOModelo.inv01_inventario" />
+    <EntitySet Name="inv01_inventario_movimiento" EntityType="INVENTARIOModelo.inv01_inventario_movimiento" />
+    <EntitySet Name="inv01_movimiento" EntityType="INVENTARIOModelo.inv01_movimiento" />
+    <EntitySet Name="inv01_producto" EntityType="INVENTARIOModelo.inv01_producto" />
+    <EntitySet Name="inv01_producto_perdida" EntityType="INVENTARIOModelo.inv01_producto_perdida" />
+    <EntitySet Name="inv01_rol" EntityType="INVENTARIOModelo.inv01_rol" />
+    <EntitySet Name="inv01_tipo_mov_inventario" EntityType="INVENTARIOModelo.inv01_tipo_mov_inventario" />
+    <EntitySet Name="inv01_tipo_movimiento" EntityType="INVENTARIOModelo.inv01_tipo_movimiento" />
+    <EntitySet Name="inv01_tipo_pago" EntityType="INVENTARIOModelo.inv01_tipo_pago" />
+    <EntitySet Name="inv01_usuario" EntityType="INVENTARIOModelo.inv01_usuario" />
+    <EntitySet Name="inv01_usuario_correlativo" EntityType="INVENTARIOModelo.inv01_usuario_correlativo" />
+    <EntitySet Name="inv01_usuario_rol" EntityType="INVENTARIOModelo.inv01_usuario_rol" />
+    <AssociationSet Name="fk_pd_ct" Association="INVENTARIOModelo.fk_pd_ct">
+      <End Role="inv01_categoria" EntitySet="inv01_categoria" />
+      <End Role="inv01_producto" EntitySet="inv01_producto" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ee_cl" Association="INVENTARIOModelo.fk_ee_cl">
+      <End Role="inv01_cliente" EntitySet="inv01_cliente" />
+      <End Role="inv01_envio_encabezado" EntitySet="inv01_envio_encabezado" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ed_en" Association="INVENTARIOModelo.fk_ed_en">
+      <End Role="inv01_envio_encabezado" EntitySet="inv01_envio_encabezado" />
+      <End Role="inv01_envio_detalle" EntitySet="inv01_envio_detalle" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ed_pr" Association="INVENTARIOModelo.fk_ed_pr">
+      <End Role="inv01_movimiento" EntitySet="inv01_movimiento" />
+      <End Role="inv01_envio_detalle" EntitySet="inv01_envio_detalle" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ee_mov" Association="INVENTARIOModelo.fk_ee_mov">
+      <End Role="inv01_movimiento" EntitySet="inv01_movimiento" />
+      <End Role="inv01_envio_encabezado" EntitySet="inv01_envio_encabezado" />
+    </AssociationSet>
+    <AssociationSet Name="fk_inv_pr" Association="INVENTARIOModelo.fk_inv_pr">
+      <End Role="inv01_producto" EntitySet="inv01_producto" />
+      <End Role="inv01_inventario" EntitySet="inv01_inventario" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mi_pr" Association="INVENTARIOModelo.fk_mi_pr">
+      <End Role="inv01_producto" EntitySet="inv01_producto" />
+      <End Role="inv01_inventario_movimiento" EntitySet="inv01_inventario_movimiento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mi_tmi" Association="INVENTARIOModelo.fk_mi_tmi">
+      <End Role="inv01_tipo_mov_inventario" EntitySet="inv01_tipo_mov_inventario" />
+      <End Role="inv01_inventario_movimiento" EntitySet="inv01_inventario_movimiento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tm_mov" Association="INVENTARIOModelo.fk_tm_mov">
+      <End Role="inv01_tipo_movimiento" EntitySet="inv01_tipo_movimiento" />
+      <End Role="inv01_movimiento" EntitySet="inv01_movimiento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tp_mov" Association="INVENTARIOModelo.fk_tp_mov">
+      <End Role="inv01_tipo_pago" EntitySet="inv01_tipo_pago" />
+      <End Role="inv01_movimiento" EntitySet="inv01_movimiento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_pp_pr" Association="INVENTARIOModelo.fk_pp_pr">
+      <End Role="inv01_producto" EntitySet="inv01_producto" />
+      <End Role="inv01_producto_perdida" EntitySet="inv01_producto_perdida" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ur_rol" Association="INVENTARIOModelo.fk_ur_rol">
+      <End Role="inv01_rol" EntitySet="inv01_rol" />
+      <End Role="inv01_usuario_rol" EntitySet="inv01_usuario_rol" />
+    </AssociationSet>
+    <AssociationSet Name="fk_uc_us" Association="INVENTARIOModelo.fk_uc_us">
+      <End Role="inv01_usuario" EntitySet="inv01_usuario" />
+      <End Role="inv01_usuario_correlativo" EntitySet="inv01_usuario_correlativo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ur_us" Association="INVENTARIOModelo.fk_ur_us">
+      <End Role="inv01_usuario" EntitySet="inv01_usuario" />
+      <End Role="inv01_usuario_rol" EntitySet="inv01_usuario_rol" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="inv01_bitacora_producto">
+    <Key>
+      <PropertyRef Name="idbitacora" />
+    </Key>
+    <Property Name="idbitacora" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="idproducto" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="descripcion_anterior" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="descripcion_actual" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="precio_costo_anterior" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="precio_costo_actual" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="imagen_anterior" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="imagen_actual" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="estado_registro_anterior" Type="String" MaxLength="1" Unicode="true" FixedLength="true" />
+    <Property Name="estado_registro_actual" Type="String" MaxLength="1" Unicode="true" FixedLength="true" />
+    <Property Name="usuario_creacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_creacion" Type="DateTime" Precision="6" />
+  </EntityType>
+  <EntityType Name="inv01_categoria">
+    <Key>
+      <PropertyRef Name="idcategoria" />
+    </Key>
+    <Property Name="idcategoria" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="descripcion" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="estado_registro" Type="String" MaxLength="1" Unicode="true" FixedLength="true" />
+    <Property Name="usuario_creacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_creacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_modificacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_modificacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_anulacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_nulacion" Type="DateTime" Precision="6" />
+    <NavigationProperty Name="inv01_producto" Relationship="INVENTARIOModelo.fk_pd_ct" FromRole="inv01_categoria" ToRole="inv01_producto" />
+  </EntityType>
+  <EntityType Name="inv01_cliente">
+    <Key>
+      <PropertyRef Name="idcliente" />
+    </Key>
+    <Property Name="idcliente" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="nit" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="nombre" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="apellido" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="nombre_completo" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="direccion" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="telefono" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="estado_registro" Type="String" MaxLength="1" Unicode="true" FixedLength="true" />
+    <Property Name="usuario_creacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_creacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_modificacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_modificacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_anulacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_nulacion" Type="DateTime" Precision="6" />
+    <NavigationProperty Name="inv01_envio_encabezado" Relationship="INVENTARIOModelo.fk_ee_cl" FromRole="inv01_cliente" ToRole="inv01_envio_encabezado" />
+  </EntityType>
+  <EntityType Name="inv01_envio_detalle">
+    <Key>
+      <PropertyRef Name="iddetalle" />
+    </Key>
+    <Property Name="iddetalle" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="idenvio" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="idproducto" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="descripcion" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="cantidad" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="precio_unitario" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="valor" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="estado_registro" Type="String" MaxLength="1" Unicode="true" FixedLength="true" />
+    <Property Name="usuario_creacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_creacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_modificacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_modificacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_anulacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_nulacion" Type="DateTime" Precision="6" />
+    <NavigationProperty Name="inv01_envio_encabezado" Relationship="INVENTARIOModelo.fk_ed_en" FromRole="inv01_envio_detalle" ToRole="inv01_envio_encabezado" />
+    <NavigationProperty Name="inv01_movimiento" Relationship="INVENTARIOModelo.fk_ed_pr" FromRole="inv01_envio_detalle" ToRole="inv01_movimiento" />
+  </EntityType>
+  <EntityType Name="inv01_envio_encabezado">
+    <Key>
+      <PropertyRef Name="idenvio" />
+    </Key>
+    <Property Name="idenvio" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="envio" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="idmovimiento" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="idcliente" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="total" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="total_letras" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+    <Property Name="estado_registro" Type="String" MaxLength="1" Unicode="true" FixedLength="true" />
+    <Property Name="usuario_creacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_creacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_modificacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_modificacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_anulacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_nulacion" Type="DateTime" Precision="6" />
+    <NavigationProperty Name="inv01_cliente" Relationship="INVENTARIOModelo.fk_ee_cl" FromRole="inv01_envio_encabezado" ToRole="inv01_cliente" />
+    <NavigationProperty Name="inv01_envio_detalle" Relationship="INVENTARIOModelo.fk_ed_en" FromRole="inv01_envio_encabezado" ToRole="inv01_envio_detalle" />
+    <NavigationProperty Name="inv01_movimiento" Relationship="INVENTARIOModelo.fk_ee_mov" FromRole="inv01_envio_encabezado" ToRole="inv01_movimiento" />
+  </EntityType>
+  <EntityType Name="inv01_inventario">
+    <Key>
+      <PropertyRef Name="idinventario" />
+    </Key>
+    <Property Name="idinventario" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="idproducto" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="factura_proveedor" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="precio_actual" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="existencia" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="estado_registro" Type="String" MaxLength="1" Unicode="true" FixedLength="true" />
+    <Property Name="usuario_creacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_creacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_modificacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_modificacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_anulacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_nulacion" Type="DateTime" Precision="6" />
+    <NavigationProperty Name="inv01_producto" Relationship="INVENTARIOModelo.fk_inv_pr" FromRole="inv01_inventario" ToRole="inv01_producto" />
+  </EntityType>
+  <EntityType Name="inv01_inventario_movimiento">
+    <Key>
+      <PropertyRef Name="idmovimiento" />
+    </Key>
+    <Property Name="idmovimiento" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="idproducto" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="descripcion_producto" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="idtipo_mov_inv" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="descripcion" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="numero_envio" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="habia" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="hay" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="existencia" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="estado_registro" Type="String" MaxLength="1" Unicode="true" FixedLength="true" />
+    <Property Name="usuario_creacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_creacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_modificacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_modificacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_anulacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_nulacion" Type="DateTime" Precision="6" />
+    <NavigationProperty Name="inv01_producto" Relationship="INVENTARIOModelo.fk_mi_pr" FromRole="inv01_inventario_movimiento" ToRole="inv01_producto" />
+    <NavigationProperty Name="inv01_tipo_mov_inventario" Relationship="INVENTARIOModelo.fk_mi_tmi" FromRole="inv01_inventario_movimiento" ToRole="inv01_tipo_mov_inventario" />
+  </EntityType>
+  <EntityType Name="inv01_movimiento">
+    <Key>
+      <PropertyRef Name="idmovimiento" />
+    </Key>
+    <Property Name="idmovimiento" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="idtipo_mov" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+    <Property Name="idtipo_pago" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cantidad" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cantidad_letras" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+    <Property Name="estado_registro" Type="String" MaxLength="1" Unicode="true" FixedLength="true" />
+    <Property Name="usuario_creacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_creacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_modificacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_modificacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_anulacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_nulacion" Type="DateTime" Precision="6" />
+    <NavigationProperty Name="inv01_envio_detalle" Relationship="INVENTARIOModelo.fk_ed_pr" FromRole="inv01_movimiento" ToRole="inv01_envio_detalle" />
+    <NavigationProperty Name="inv01_envio_encabezado" Relationship="INVENTARIOModelo.fk_ee_mov" FromRole="inv01_movimiento" ToRole="inv01_envio_encabezado" />
+    <NavigationProperty Name="inv01_tipo_movimiento" Relationship="INVENTARIOModelo.fk_tm_mov" FromRole="inv01_movimiento" ToRole="inv01_tipo_movimiento" />
+    <NavigationProperty Name="inv01_tipo_pago" Relationship="INVENTARIOModelo.fk_tp_mov" FromRole="inv01_movimiento" ToRole="inv01_tipo_pago" />
+  </EntityType>
+  <EntityType Name="inv01_producto">
+    <Key>
+      <PropertyRef Name="idproducto" />
+    </Key>
+    <Property Name="idproducto" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="codigo_barra" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="idcategoria" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="descripcion" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="precio_costo" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="estado_registro" Type="String" MaxLength="1" Unicode="true" FixedLength="true" />
+    <Property Name="usuario_creacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_creacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_modificacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_modificacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_anulacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_nulacion" Type="DateTime" Precision="6" />
+    <NavigationProperty Name="inv01_categoria" Relationship="INVENTARIOModelo.fk_pd_ct" FromRole="inv01_producto" ToRole="inv01_categoria" />
+    <NavigationProperty Name="inv01_inventario" Relationship="INVENTARIOModelo.fk_inv_pr" FromRole="inv01_producto" ToRole="inv01_inventario" />
+    <NavigationProperty Name="inv01_inventario_movimiento" Relationship="INVENTARIOModelo.fk_mi_pr" FromRole="inv01_producto" ToRole="inv01_inventario_movimiento" />
+    <NavigationProperty Name="inv01_producto_perdida" Relationship="INVENTARIOModelo.fk_pp_pr" FromRole="inv01_producto" ToRole="inv01_producto_perdida" />
+  </EntityType>
+  <EntityType Name="inv01_producto_perdida">
+    <Key>
+      <PropertyRef Name="idperdida" />
+    </Key>
+    <Property Name="idperdida" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="idproducto" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="descripcion" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="cantidad" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="precio_costo" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="estado_registro" Type="String" MaxLength="1" Unicode="true" FixedLength="true" />
+    <Property Name="usuario_creacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_creacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_modificacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_modificacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_anulacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_nulacion" Type="DateTime" Precision="6" />
+    <NavigationProperty Name="inv01_producto" Relationship="INVENTARIOModelo.fk_pp_pr" FromRole="inv01_producto_perdida" ToRole="inv01_producto" />
+  </EntityType>
+  <EntityType Name="inv01_rol">
+    <Key>
+      <PropertyRef Name="rol" />
+    </Key>
+    <Property Name="rol" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="nombre" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="estado_registro" Type="String" MaxLength="1" Unicode="true" FixedLength="true" />
+    <Property Name="usuario_creacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_creacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_modificacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_modificacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_anulacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_nulacion" Type="DateTime" Precision="6" />
+    <NavigationProperty Name="inv01_usuario_rol" Relationship="INVENTARIOModelo.fk_ur_rol" FromRole="inv01_rol" ToRole="inv01_usuario_rol" />
+  </EntityType>
+  <EntityType Name="inv01_tipo_mov_inventario">
+    <Key>
+      <PropertyRef Name="idtipo_mov_inv" />
+    </Key>
+    <Property Name="idtipo_mov_inv" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="descripcion" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="estado_registro" Type="String" MaxLength="1" Unicode="true" FixedLength="true" />
+    <Property Name="usuario_creacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_creacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_modificacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_modificacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_anulacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_nulacion" Type="DateTime" Precision="6" />
+    <NavigationProperty Name="inv01_inventario_movimiento" Relationship="INVENTARIOModelo.fk_mi_tmi" FromRole="inv01_tipo_mov_inventario" ToRole="inv01_inventario_movimiento" />
+  </EntityType>
+  <EntityType Name="inv01_tipo_movimiento">
+    <Key>
+      <PropertyRef Name="idtipo_mov" />
+    </Key>
+    <Property Name="idtipo_mov" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+    <Property Name="descripcion" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="estado_registro" Type="String" MaxLength="1" Unicode="true" FixedLength="true" />
+    <Property Name="usuario_creacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_creacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_modificacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_modificacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_anulacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_nulacion" Type="DateTime" Precision="6" />
+    <NavigationProperty Name="inv01_movimiento" Relationship="INVENTARIOModelo.fk_tm_mov" FromRole="inv01_tipo_movimiento" ToRole="inv01_movimiento" />
+  </EntityType>
+  <EntityType Name="inv01_tipo_pago">
+    <Key>
+      <PropertyRef Name="idtipo_pago" />
+    </Key>
+    <Property Name="idtipo_pago" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="descripcion" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="estado_registro" Type="String" MaxLength="1" Unicode="true" FixedLength="true" />
+    <Property Name="usuario_creacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_creacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_modificacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_modificacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_anulacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_nulacion" Type="DateTime" Precision="6" />
+    <NavigationProperty Name="inv01_movimiento" Relationship="INVENTARIOModelo.fk_tp_mov" FromRole="inv01_tipo_pago" ToRole="inv01_movimiento" />
+  </EntityType>
+  <EntityType Name="inv01_usuario">
+    <Key>
+      <PropertyRef Name="usuario" />
+    </Key>
+    <Property Name="usuario" Type="String" Nullable="false" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="nombre" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="password" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="estado_registro" Type="String" MaxLength="1" Unicode="true" FixedLength="true" />
+    <Property Name="usuario_creacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_creacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_modificacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_modificacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_anulacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_nulacion" Type="DateTime" Precision="6" />
+    <NavigationProperty Name="inv01_usuario_correlativo" Relationship="INVENTARIOModelo.fk_uc_us" FromRole="inv01_usuario" ToRole="inv01_usuario_correlativo" />
+    <NavigationProperty Name="inv01_usuario_rol" Relationship="INVENTARIOModelo.fk_ur_us" FromRole="inv01_usuario" ToRole="inv01_usuario_rol" />
+  </EntityType>
+  <EntityType Name="inv01_usuario_correlativo">
+    <Key>
+      <PropertyRef Name="idcorrelativo" />
+    </Key>
+    <Property Name="idcorrelativo" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="usuario" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="descripcion" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="correlativo_actual" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="estado_registro" Type="String" MaxLength="1" Unicode="true" FixedLength="true" />
+    <Property Name="usuario_creacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_creacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_modificacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_modificacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_anulacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_nulacion" Type="DateTime" Precision="6" />
+    <NavigationProperty Name="inv01_usuario" Relationship="INVENTARIOModelo.fk_uc_us" FromRole="inv01_usuario_correlativo" ToRole="inv01_usuario" />
+  </EntityType>
+  <EntityType Name="inv01_usuario_rol">
+    <Key>
+      <PropertyRef Name="usuario" />
+      <PropertyRef Name="rol" />
+    </Key>
+    <Property Name="usuario" Type="String" Nullable="false" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="rol" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="estado_registro" Type="String" MaxLength="1" Unicode="true" FixedLength="true" />
+    <Property Name="usuario_creacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_creacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_modificacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_modificacion" Type="DateTime" Precision="6" />
+    <Property Name="usuario_anulacion" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="fecha_nulacion" Type="DateTime" Precision="6" />
+    <NavigationProperty Name="inv01_rol" Relationship="INVENTARIOModelo.fk_ur_rol" FromRole="inv01_usuario_rol" ToRole="inv01_rol" />
+    <NavigationProperty Name="inv01_usuario" Relationship="INVENTARIOModelo.fk_ur_us" FromRole="inv01_usuario_rol" ToRole="inv01_usuario" />
+  </EntityType>
+  <Association Name="fk_pd_ct">
+    <End Role="inv01_categoria" Type="INVENTARIOModelo.inv01_categoria" Multiplicity="0..1" />
+    <End Role="inv01_producto" Type="INVENTARIOModelo.inv01_producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_categoria">
+        <PropertyRef Name="idcategoria" />
+      </Principal>
+      <Dependent Role="inv01_producto">
+        <PropertyRef Name="idcategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ee_cl">
+    <End Role="inv01_cliente" Type="INVENTARIOModelo.inv01_cliente" Multiplicity="0..1" />
+    <End Role="inv01_envio_encabezado" Type="INVENTARIOModelo.inv01_envio_encabezado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_cliente">
+        <PropertyRef Name="idcliente" />
+      </Principal>
+      <Dependent Role="inv01_envio_encabezado">
+        <PropertyRef Name="idcliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ed_en">
+    <End Role="inv01_envio_encabezado" Type="INVENTARIOModelo.inv01_envio_encabezado" Multiplicity="0..1" />
+    <End Role="inv01_envio_detalle" Type="INVENTARIOModelo.inv01_envio_detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_envio_encabezado">
+        <PropertyRef Name="idenvio" />
+      </Principal>
+      <Dependent Role="inv01_envio_detalle">
+        <PropertyRef Name="idenvio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ed_pr">
+    <End Role="inv01_movimiento" Type="INVENTARIOModelo.inv01_movimiento" Multiplicity="0..1" />
+    <End Role="inv01_envio_detalle" Type="INVENTARIOModelo.inv01_envio_detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_movimiento">
+        <PropertyRef Name="idmovimiento" />
+      </Principal>
+      <Dependent Role="inv01_envio_detalle">
+        <PropertyRef Name="idproducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ee_mov">
+    <End Role="inv01_movimiento" Type="INVENTARIOModelo.inv01_movimiento" Multiplicity="0..1" />
+    <End Role="inv01_envio_encabezado" Type="INVENTARIOModelo.inv01_envio_encabezado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_movimiento">
+        <PropertyRef Name="idmovimiento" />
+      </Principal>
+      <Dependent Role="inv01_envio_encabezado">
+        <PropertyRef Name="idmovimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_inv_pr">
+    <End Role="inv01_producto" Type="INVENTARIOModelo.inv01_producto" Multiplicity="0..1" />
+    <End Role="inv01_inventario" Type="INVENTARIOModelo.inv01_inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_producto">
+        <PropertyRef Name="idproducto" />
+      </Principal>
+      <Dependent Role="inv01_inventario">
+        <PropertyRef Name="idproducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mi_pr">
+    <End Role="inv01_producto" Type="INVENTARIOModelo.inv01_producto" Multiplicity="0..1" />
+    <End Role="inv01_inventario_movimiento" Type="INVENTARIOModelo.inv01_inventario_movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_producto">
+        <PropertyRef Name="idproducto" />
+      </Principal>
+      <Dependent Role="inv01_inventario_movimiento">
+        <PropertyRef Name="idproducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mi_tmi">
+    <End Role="inv01_tipo_mov_inventario" Type="INVENTARIOModelo.inv01_tipo_mov_inventario" Multiplicity="0..1" />
+    <End Role="inv01_inventario_movimiento" Type="INVENTARIOModelo.inv01_inventario_movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_tipo_mov_inventario">
+        <PropertyRef Name="idtipo_mov_inv" />
+      </Principal>
+      <Dependent Role="inv01_inventario_movimiento">
+        <PropertyRef Name="idtipo_mov_inv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tm_mov">
+    <End Role="inv01_tipo_movimiento" Type="INVENTARIOModelo.inv01_tipo_movimiento" Multiplicity="0..1" />
+    <End Role="inv01_movimiento" Type="INVENTARIOModelo.inv01_movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_tipo_movimiento">
+        <PropertyRef Name="idtipo_mov" />
+      </Principal>
+      <Dependent Role="inv01_movimiento">
+        <PropertyRef Name="idtipo_mov" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tp_mov">
+    <End Role="inv01_tipo_pago" Type="INVENTARIOModelo.inv01_tipo_pago" Multiplicity="0..1" />
+    <End Role="inv01_movimiento" Type="INVENTARIOModelo.inv01_movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_tipo_pago">
+        <PropertyRef Name="idtipo_pago" />
+      </Principal>
+      <Dependent Role="inv01_movimiento">
+        <PropertyRef Name="idtipo_pago" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_pp_pr">
+    <End Role="inv01_producto" Type="INVENTARIOModelo.inv01_producto" Multiplicity="0..1" />
+    <End Role="inv01_producto_perdida" Type="INVENTARIOModelo.inv01_producto_perdida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_producto">
+        <PropertyRef Name="idproducto" />
+      </Principal>
+      <Dependent Role="inv01_producto_perdida">
+        <PropertyRef Name="idproducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ur_rol">
+    <End Role="inv01_rol" Type="INVENTARIOModelo.inv01_rol" Multiplicity="1" />
+    <End Role="inv01_usuario_rol" Type="INVENTARIOModelo.inv01_usuario_rol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_rol">
+        <PropertyRef Name="rol" />
+      </Principal>
+      <Dependent Role="inv01_usuario_rol">
+        <PropertyRef Name="rol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_uc_us">
+    <End Role="inv01_usuario" Type="INVENTARIOModelo.inv01_usuario" Multiplicity="0..1" />
+    <End Role="inv01_usuario_correlativo" Type="INVENTARIOModelo.inv01_usuario_correlativo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_usuario">
+        <PropertyRef Name="usuario" />
+      </Principal>
+      <Dependent Role="inv01_usuario_correlativo">
+        <PropertyRef Name="usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ur_us">
+    <End Role="inv01_usuario" Type="INVENTARIOModelo.inv01_usuario" Multiplicity="1" />
+    <End Role="inv01_usuario_rol" Type="INVENTARIOModelo.inv01_usuario_rol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_usuario">
+        <PropertyRef Name="usuario" />
+      </Principal>
+      <Dependent Role="inv01_usuario_rol">
+        <PropertyRef Name="usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

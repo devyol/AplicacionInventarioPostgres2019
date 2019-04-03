@@ -1,0 +1,526 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="INVENTARIOModel.Store" Alias="Self" Provider="Npgsql" ProviderManifestToken="9.5.13" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="INVENTARIOModelStoreContainer">
+    <EntitySet Name="inv01_bitacora_producto" EntityType="INVENTARIOModel.Store.inv01_bitacora_producto" store:Type="Tables" Schema="public" />
+    <EntitySet Name="inv01_categoria" EntityType="INVENTARIOModel.Store.inv01_categoria" store:Type="Tables" Schema="public" />
+    <EntitySet Name="inv01_cliente" EntityType="INVENTARIOModel.Store.inv01_cliente" store:Type="Tables" Schema="public" />
+    <EntitySet Name="inv01_envio_detalle" EntityType="INVENTARIOModel.Store.inv01_envio_detalle" store:Type="Tables" Schema="public" />
+    <EntitySet Name="inv01_envio_encabezado" EntityType="INVENTARIOModel.Store.inv01_envio_encabezado" store:Type="Tables" Schema="public" />
+    <EntitySet Name="inv01_inventario" EntityType="INVENTARIOModel.Store.inv01_inventario" store:Type="Tables" Schema="public" />
+    <EntitySet Name="inv01_inventario_movimiento" EntityType="INVENTARIOModel.Store.inv01_inventario_movimiento" store:Type="Tables" Schema="public" />
+    <EntitySet Name="inv01_movimiento" EntityType="INVENTARIOModel.Store.inv01_movimiento" store:Type="Tables" Schema="public" />
+    <EntitySet Name="inv01_producto" EntityType="INVENTARIOModel.Store.inv01_producto" store:Type="Tables" Schema="public" />
+    <EntitySet Name="inv01_producto_perdida" EntityType="INVENTARIOModel.Store.inv01_producto_perdida" store:Type="Tables" Schema="public" />
+    <EntitySet Name="inv01_rol" EntityType="INVENTARIOModel.Store.inv01_rol" store:Type="Tables" Schema="public" />
+    <EntitySet Name="inv01_tipo_mov_inventario" EntityType="INVENTARIOModel.Store.inv01_tipo_mov_inventario" store:Type="Tables" Schema="public" />
+    <EntitySet Name="inv01_tipo_movimiento" EntityType="INVENTARIOModel.Store.inv01_tipo_movimiento" store:Type="Tables" Schema="public" />
+    <EntitySet Name="inv01_tipo_pago" EntityType="INVENTARIOModel.Store.inv01_tipo_pago" store:Type="Tables" Schema="public" />
+    <EntitySet Name="inv01_usuario" EntityType="INVENTARIOModel.Store.inv01_usuario" store:Type="Tables" Schema="public" />
+    <EntitySet Name="inv01_usuario_correlativo" EntityType="INVENTARIOModel.Store.inv01_usuario_correlativo" store:Type="Tables" Schema="public" />
+    <EntitySet Name="inv01_usuario_rol" EntityType="INVENTARIOModel.Store.inv01_usuario_rol" store:Type="Tables" Schema="public" />
+    <AssociationSet Name="fk_ed_en" Association="INVENTARIOModel.Store.fk_ed_en">
+      <End Role="inv01_envio_encabezado" EntitySet="inv01_envio_encabezado" />
+      <End Role="inv01_envio_detalle" EntitySet="inv01_envio_detalle" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ed_pr" Association="INVENTARIOModel.Store.fk_ed_pr">
+      <End Role="inv01_movimiento" EntitySet="inv01_movimiento" />
+      <End Role="inv01_envio_detalle" EntitySet="inv01_envio_detalle" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ee_cl" Association="INVENTARIOModel.Store.fk_ee_cl">
+      <End Role="inv01_cliente" EntitySet="inv01_cliente" />
+      <End Role="inv01_envio_encabezado" EntitySet="inv01_envio_encabezado" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ee_mov" Association="INVENTARIOModel.Store.fk_ee_mov">
+      <End Role="inv01_movimiento" EntitySet="inv01_movimiento" />
+      <End Role="inv01_envio_encabezado" EntitySet="inv01_envio_encabezado" />
+    </AssociationSet>
+    <AssociationSet Name="fk_inv_pr" Association="INVENTARIOModel.Store.fk_inv_pr">
+      <End Role="inv01_producto" EntitySet="inv01_producto" />
+      <End Role="inv01_inventario" EntitySet="inv01_inventario" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mi_pr" Association="INVENTARIOModel.Store.fk_mi_pr">
+      <End Role="inv01_producto" EntitySet="inv01_producto" />
+      <End Role="inv01_inventario_movimiento" EntitySet="inv01_inventario_movimiento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mi_tmi" Association="INVENTARIOModel.Store.fk_mi_tmi">
+      <End Role="inv01_tipo_mov_inventario" EntitySet="inv01_tipo_mov_inventario" />
+      <End Role="inv01_inventario_movimiento" EntitySet="inv01_inventario_movimiento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_pd_ct" Association="INVENTARIOModel.Store.fk_pd_ct">
+      <End Role="inv01_categoria" EntitySet="inv01_categoria" />
+      <End Role="inv01_producto" EntitySet="inv01_producto" />
+    </AssociationSet>
+    <AssociationSet Name="fk_pp_pr" Association="INVENTARIOModel.Store.fk_pp_pr">
+      <End Role="inv01_producto" EntitySet="inv01_producto" />
+      <End Role="inv01_producto_perdida" EntitySet="inv01_producto_perdida" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tm_mov" Association="INVENTARIOModel.Store.fk_tm_mov">
+      <End Role="inv01_tipo_movimiento" EntitySet="inv01_tipo_movimiento" />
+      <End Role="inv01_movimiento" EntitySet="inv01_movimiento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tp_mov" Association="INVENTARIOModel.Store.fk_tp_mov">
+      <End Role="inv01_tipo_pago" EntitySet="inv01_tipo_pago" />
+      <End Role="inv01_movimiento" EntitySet="inv01_movimiento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_uc_us" Association="INVENTARIOModel.Store.fk_uc_us">
+      <End Role="inv01_usuario" EntitySet="inv01_usuario" />
+      <End Role="inv01_usuario_correlativo" EntitySet="inv01_usuario_correlativo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ur_rol" Association="INVENTARIOModel.Store.fk_ur_rol">
+      <End Role="inv01_rol" EntitySet="inv01_rol" />
+      <End Role="inv01_usuario_rol" EntitySet="inv01_usuario_rol" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ur_us" Association="INVENTARIOModel.Store.fk_ur_us">
+      <End Role="inv01_usuario" EntitySet="inv01_usuario" />
+      <End Role="inv01_usuario_rol" EntitySet="inv01_usuario_rol" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="inv01_bitacora_producto">
+    <Key>
+      <PropertyRef Name="idbitacora" />
+    </Key>
+    <Property Name="idbitacora" Type="numeric" Nullable="false" />
+    <Property Name="idproducto" Type="numeric" />
+    <Property Name="descripcion_anterior" Type="varchar" MaxLength="250" />
+    <Property Name="descripcion_actual" Type="varchar" MaxLength="250" />
+    <Property Name="precio_costo_anterior" Type="numeric" />
+    <Property Name="precio_costo_actual" Type="numeric" />
+    <Property Name="imagen_anterior" Type="bytea" />
+    <Property Name="imagen_actual" Type="bytea" />
+    <Property Name="estado_registro_anterior" Type="bpchar" />
+    <Property Name="estado_registro_actual" Type="bpchar" />
+    <Property Name="usuario_creacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_creacion" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="inv01_categoria">
+    <Key>
+      <PropertyRef Name="idcategoria" />
+    </Key>
+    <Property Name="idcategoria" Type="numeric" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="100" />
+    <Property Name="estado_registro" Type="bpchar" />
+    <Property Name="usuario_creacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_creacion" Type="timestamp" />
+    <Property Name="usuario_modificacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_modificacion" Type="timestamp" />
+    <Property Name="usuario_anulacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_nulacion" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="inv01_cliente">
+    <Key>
+      <PropertyRef Name="idcliente" />
+    </Key>
+    <Property Name="idcliente" Type="numeric" Nullable="false" />
+    <Property Name="nit" Type="varchar" MaxLength="25" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" />
+    <Property Name="apellido" Type="varchar" MaxLength="100" />
+    <Property Name="nombre_completo" Type="varchar" MaxLength="200" />
+    <Property Name="direccion" Type="varchar" MaxLength="150" />
+    <Property Name="telefono" Type="varchar" MaxLength="25" />
+    <Property Name="estado_registro" Type="bpchar" />
+    <Property Name="usuario_creacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_creacion" Type="timestamp" />
+    <Property Name="usuario_modificacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_modificacion" Type="timestamp" />
+    <Property Name="usuario_anulacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_nulacion" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="inv01_envio_detalle">
+    <Key>
+      <PropertyRef Name="iddetalle" />
+    </Key>
+    <Property Name="iddetalle" Type="numeric" Nullable="false" />
+    <Property Name="idenvio" Type="numeric" />
+    <Property Name="idproducto" Type="numeric" />
+    <Property Name="descripcion" Type="varchar" MaxLength="250" />
+    <Property Name="cantidad" Type="numeric" />
+    <Property Name="precio_unitario" Type="numeric" />
+    <Property Name="valor" Type="numeric" />
+    <Property Name="estado_registro" Type="bpchar" />
+    <Property Name="usuario_creacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_creacion" Type="timestamp" />
+    <Property Name="usuario_modificacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_modificacion" Type="timestamp" />
+    <Property Name="usuario_anulacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_nulacion" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="inv01_envio_encabezado">
+    <Key>
+      <PropertyRef Name="idenvio" />
+    </Key>
+    <Property Name="idenvio" Type="numeric" Nullable="false" />
+    <Property Name="envio" Type="numeric" />
+    <Property Name="idmovimiento" Type="numeric" />
+    <Property Name="idcliente" Type="numeric" />
+    <Property Name="total" Type="numeric" />
+    <Property Name="total_letras" Type="varchar" MaxLength="300" />
+    <Property Name="estado_registro" Type="bpchar" />
+    <Property Name="usuario_creacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_creacion" Type="timestamp" />
+    <Property Name="usuario_modificacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_modificacion" Type="timestamp" />
+    <Property Name="usuario_anulacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_nulacion" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="inv01_inventario">
+    <Key>
+      <PropertyRef Name="idinventario" />
+    </Key>
+    <Property Name="idinventario" Type="numeric" Nullable="false" />
+    <Property Name="idproducto" Type="numeric" />
+    <Property Name="factura_proveedor" Type="varchar" MaxLength="100" />
+    <Property Name="precio_actual" Type="numeric" />
+    <Property Name="existencia" Type="numeric" />
+    <Property Name="estado_registro" Type="bpchar" />
+    <Property Name="usuario_creacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_creacion" Type="timestamp" />
+    <Property Name="usuario_modificacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_modificacion" Type="timestamp" />
+    <Property Name="usuario_anulacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_nulacion" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="inv01_inventario_movimiento">
+    <Key>
+      <PropertyRef Name="idmovimiento" />
+    </Key>
+    <Property Name="idmovimiento" Type="numeric" Nullable="false" />
+    <Property Name="idproducto" Type="numeric" />
+    <Property Name="descripcion_producto" Type="varchar" MaxLength="250" />
+    <Property Name="idtipo_mov_inv" Type="numeric" />
+    <Property Name="descripcion" Type="varchar" MaxLength="150" />
+    <Property Name="numero_envio" Type="numeric" />
+    <Property Name="habia" Type="numeric" />
+    <Property Name="hay" Type="numeric" />
+    <Property Name="existencia" Type="numeric" />
+    <Property Name="estado_registro" Type="bpchar" />
+    <Property Name="usuario_creacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_creacion" Type="timestamp" />
+    <Property Name="usuario_modificacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_modificacion" Type="timestamp" />
+    <Property Name="usuario_anulacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_nulacion" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="inv01_movimiento">
+    <Key>
+      <PropertyRef Name="idmovimiento" />
+    </Key>
+    <Property Name="idmovimiento" Type="numeric" Nullable="false" />
+    <Property Name="idtipo_mov" Type="varchar" MaxLength="5" />
+    <Property Name="idtipo_pago" Type="numeric" />
+    <Property Name="cantidad" Type="numeric" />
+    <Property Name="cantidad_letras" Type="varchar" MaxLength="300" />
+    <Property Name="estado_registro" Type="bpchar" />
+    <Property Name="usuario_creacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_creacion" Type="timestamp" />
+    <Property Name="usuario_modificacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_modificacion" Type="timestamp" />
+    <Property Name="usuario_anulacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_nulacion" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="inv01_producto">
+    <Key>
+      <PropertyRef Name="idproducto" />
+    </Key>
+    <Property Name="idproducto" Type="numeric" Nullable="false" />
+    <Property Name="codigo_barra" Type="varchar" MaxLength="100" />
+    <Property Name="idcategoria" Type="numeric" />
+    <Property Name="descripcion" Type="varchar" MaxLength="250" />
+    <Property Name="precio_costo" Type="numeric" />
+    <Property Name="imagen" Type="bytea" />
+    <Property Name="estado_registro" Type="bpchar" />
+    <Property Name="usuario_creacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_creacion" Type="timestamp" />
+    <Property Name="usuario_modificacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_modificacion" Type="timestamp" />
+    <Property Name="usuario_anulacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_nulacion" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="inv01_producto_perdida">
+    <Key>
+      <PropertyRef Name="idperdida" />
+    </Key>
+    <Property Name="idperdida" Type="numeric" Nullable="false" />
+    <Property Name="idproducto" Type="numeric" />
+    <Property Name="descripcion" Type="varchar" MaxLength="250" />
+    <Property Name="cantidad" Type="numeric" />
+    <Property Name="precio_costo" Type="numeric" />
+    <Property Name="imagen" Type="bytea" />
+    <Property Name="estado_registro" Type="bpchar" />
+    <Property Name="usuario_creacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_creacion" Type="timestamp" />
+    <Property Name="usuario_modificacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_modificacion" Type="timestamp" />
+    <Property Name="usuario_anulacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_nulacion" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="inv01_rol">
+    <Key>
+      <PropertyRef Name="rol" />
+    </Key>
+    <Property Name="rol" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" />
+    <Property Name="estado_registro" Type="bpchar" />
+    <Property Name="usuario_creacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_creacion" Type="timestamp" />
+    <Property Name="usuario_modificacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_modificacion" Type="timestamp" />
+    <Property Name="usuario_anulacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_nulacion" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="inv01_tipo_mov_inventario">
+    <Key>
+      <PropertyRef Name="idtipo_mov_inv" />
+    </Key>
+    <Property Name="idtipo_mov_inv" Type="numeric" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" />
+    <Property Name="estado_registro" Type="bpchar" />
+    <Property Name="usuario_creacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_creacion" Type="timestamp" />
+    <Property Name="usuario_modificacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_modificacion" Type="timestamp" />
+    <Property Name="usuario_anulacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_nulacion" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="inv01_tipo_movimiento">
+    <Key>
+      <PropertyRef Name="idtipo_mov" />
+    </Key>
+    <Property Name="idtipo_mov" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" />
+    <Property Name="estado_registro" Type="bpchar" />
+    <Property Name="usuario_creacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_creacion" Type="timestamp" />
+    <Property Name="usuario_modificacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_modificacion" Type="timestamp" />
+    <Property Name="usuario_anulacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_nulacion" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="inv01_tipo_pago">
+    <Key>
+      <PropertyRef Name="idtipo_pago" />
+    </Key>
+    <Property Name="idtipo_pago" Type="numeric" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" />
+    <Property Name="estado_registro" Type="bpchar" />
+    <Property Name="usuario_creacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_creacion" Type="timestamp" />
+    <Property Name="usuario_modificacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_modificacion" Type="timestamp" />
+    <Property Name="usuario_anulacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_nulacion" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="inv01_usuario">
+    <Key>
+      <PropertyRef Name="usuario" />
+    </Key>
+    <Property Name="usuario" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" />
+    <Property Name="password" Type="varchar" MaxLength="150" />
+    <Property Name="estado_registro" Type="bpchar" />
+    <Property Name="usuario_creacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_creacion" Type="timestamp" />
+    <Property Name="usuario_modificacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_modificacion" Type="timestamp" />
+    <Property Name="usuario_anulacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_nulacion" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="inv01_usuario_correlativo">
+    <Key>
+      <PropertyRef Name="idcorrelativo" />
+    </Key>
+    <Property Name="idcorrelativo" Type="numeric" Nullable="false" />
+    <Property Name="usuario" Type="varchar" MaxLength="25" />
+    <Property Name="descripcion" Type="varchar" MaxLength="100" />
+    <Property Name="correlativo_actual" Type="numeric" />
+    <Property Name="estado_registro" Type="bpchar" />
+    <Property Name="usuario_creacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_creacion" Type="timestamp" />
+    <Property Name="usuario_modificacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_modificacion" Type="timestamp" />
+    <Property Name="usuario_anulacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_nulacion" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="inv01_usuario_rol">
+    <Key>
+      <PropertyRef Name="usuario" />
+      <PropertyRef Name="rol" />
+    </Key>
+    <Property Name="usuario" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="rol" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="estado_registro" Type="bpchar" />
+    <Property Name="usuario_creacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_creacion" Type="timestamp" />
+    <Property Name="usuario_modificacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_modificacion" Type="timestamp" />
+    <Property Name="usuario_anulacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_nulacion" Type="timestamp" />
+  </EntityType>
+  <Association Name="fk_ed_en">
+    <End Role="inv01_envio_encabezado" Type="INVENTARIOModel.Store.inv01_envio_encabezado" Multiplicity="0..1" />
+    <End Role="inv01_envio_detalle" Type="INVENTARIOModel.Store.inv01_envio_detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_envio_encabezado">
+        <PropertyRef Name="idenvio" />
+      </Principal>
+      <Dependent Role="inv01_envio_detalle">
+        <PropertyRef Name="idenvio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ed_pr">
+    <End Role="inv01_movimiento" Type="INVENTARIOModel.Store.inv01_movimiento" Multiplicity="0..1" />
+    <End Role="inv01_envio_detalle" Type="INVENTARIOModel.Store.inv01_envio_detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_movimiento">
+        <PropertyRef Name="idmovimiento" />
+      </Principal>
+      <Dependent Role="inv01_envio_detalle">
+        <PropertyRef Name="idproducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ee_cl">
+    <End Role="inv01_cliente" Type="INVENTARIOModel.Store.inv01_cliente" Multiplicity="0..1" />
+    <End Role="inv01_envio_encabezado" Type="INVENTARIOModel.Store.inv01_envio_encabezado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_cliente">
+        <PropertyRef Name="idcliente" />
+      </Principal>
+      <Dependent Role="inv01_envio_encabezado">
+        <PropertyRef Name="idcliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ee_mov">
+    <End Role="inv01_movimiento" Type="INVENTARIOModel.Store.inv01_movimiento" Multiplicity="0..1" />
+    <End Role="inv01_envio_encabezado" Type="INVENTARIOModel.Store.inv01_envio_encabezado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_movimiento">
+        <PropertyRef Name="idmovimiento" />
+      </Principal>
+      <Dependent Role="inv01_envio_encabezado">
+        <PropertyRef Name="idmovimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_inv_pr">
+    <End Role="inv01_producto" Type="INVENTARIOModel.Store.inv01_producto" Multiplicity="0..1" />
+    <End Role="inv01_inventario" Type="INVENTARIOModel.Store.inv01_inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_producto">
+        <PropertyRef Name="idproducto" />
+      </Principal>
+      <Dependent Role="inv01_inventario">
+        <PropertyRef Name="idproducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mi_pr">
+    <End Role="inv01_producto" Type="INVENTARIOModel.Store.inv01_producto" Multiplicity="0..1" />
+    <End Role="inv01_inventario_movimiento" Type="INVENTARIOModel.Store.inv01_inventario_movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_producto">
+        <PropertyRef Name="idproducto" />
+      </Principal>
+      <Dependent Role="inv01_inventario_movimiento">
+        <PropertyRef Name="idproducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mi_tmi">
+    <End Role="inv01_tipo_mov_inventario" Type="INVENTARIOModel.Store.inv01_tipo_mov_inventario" Multiplicity="0..1" />
+    <End Role="inv01_inventario_movimiento" Type="INVENTARIOModel.Store.inv01_inventario_movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_tipo_mov_inventario">
+        <PropertyRef Name="idtipo_mov_inv" />
+      </Principal>
+      <Dependent Role="inv01_inventario_movimiento">
+        <PropertyRef Name="idtipo_mov_inv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_pd_ct">
+    <End Role="inv01_categoria" Type="INVENTARIOModel.Store.inv01_categoria" Multiplicity="0..1" />
+    <End Role="inv01_producto" Type="INVENTARIOModel.Store.inv01_producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_categoria">
+        <PropertyRef Name="idcategoria" />
+      </Principal>
+      <Dependent Role="inv01_producto">
+        <PropertyRef Name="idcategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_pp_pr">
+    <End Role="inv01_producto" Type="INVENTARIOModel.Store.inv01_producto" Multiplicity="0..1" />
+    <End Role="inv01_producto_perdida" Type="INVENTARIOModel.Store.inv01_producto_perdida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_producto">
+        <PropertyRef Name="idproducto" />
+      </Principal>
+      <Dependent Role="inv01_producto_perdida">
+        <PropertyRef Name="idproducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tm_mov">
+    <End Role="inv01_tipo_movimiento" Type="INVENTARIOModel.Store.inv01_tipo_movimiento" Multiplicity="0..1" />
+    <End Role="inv01_movimiento" Type="INVENTARIOModel.Store.inv01_movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_tipo_movimiento">
+        <PropertyRef Name="idtipo_mov" />
+      </Principal>
+      <Dependent Role="inv01_movimiento">
+        <PropertyRef Name="idtipo_mov" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tp_mov">
+    <End Role="inv01_tipo_pago" Type="INVENTARIOModel.Store.inv01_tipo_pago" Multiplicity="0..1" />
+    <End Role="inv01_movimiento" Type="INVENTARIOModel.Store.inv01_movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_tipo_pago">
+        <PropertyRef Name="idtipo_pago" />
+      </Principal>
+      <Dependent Role="inv01_movimiento">
+        <PropertyRef Name="idtipo_pago" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_uc_us">
+    <End Role="inv01_usuario" Type="INVENTARIOModel.Store.inv01_usuario" Multiplicity="0..1" />
+    <End Role="inv01_usuario_correlativo" Type="INVENTARIOModel.Store.inv01_usuario_correlativo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_usuario">
+        <PropertyRef Name="usuario" />
+      </Principal>
+      <Dependent Role="inv01_usuario_correlativo">
+        <PropertyRef Name="usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ur_rol">
+    <End Role="inv01_rol" Type="INVENTARIOModel.Store.inv01_rol" Multiplicity="1" />
+    <End Role="inv01_usuario_rol" Type="INVENTARIOModel.Store.inv01_usuario_rol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_rol">
+        <PropertyRef Name="rol" />
+      </Principal>
+      <Dependent Role="inv01_usuario_rol">
+        <PropertyRef Name="rol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ur_us">
+    <End Role="inv01_usuario" Type="INVENTARIOModel.Store.inv01_usuario" Multiplicity="1" />
+    <End Role="inv01_usuario_rol" Type="INVENTARIOModel.Store.inv01_usuario_rol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inv01_usuario">
+        <PropertyRef Name="usuario" />
+      </Principal>
+      <Dependent Role="inv01_usuario_rol">
+        <PropertyRef Name="usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

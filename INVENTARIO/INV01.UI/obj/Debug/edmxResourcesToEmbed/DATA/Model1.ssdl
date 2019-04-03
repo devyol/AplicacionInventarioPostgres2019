@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="INVENTARIOModel.Store" Alias="Self" Provider="Npgsql" ProviderManifestToken="9.5.13" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="INVENTARIOModelStoreContainer">
+    <EntitySet Name="inv01_usuario" EntityType="INVENTARIOModel.Store.inv01_usuario" store:Type="Tables" Schema="public" />
+  </EntityContainer>
+  <EntityType Name="inv01_usuario">
+    <Key>
+      <PropertyRef Name="usuario" />
+    </Key>
+    <Property Name="usuario" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" />
+    <Property Name="password" Type="varchar" MaxLength="150" />
+    <Property Name="estado_registro" Type="bpchar" />
+    <Property Name="usuario_creacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_creacion" Type="date" />
+    <Property Name="usuario_modificacion" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_modificacion" Type="date" />
+    <Property Name="usuario_bloqueo" Type="varchar" MaxLength="25" />
+    <Property Name="fecha_bloqueo" Type="date" />
+  </EntityType>
+</Schema>

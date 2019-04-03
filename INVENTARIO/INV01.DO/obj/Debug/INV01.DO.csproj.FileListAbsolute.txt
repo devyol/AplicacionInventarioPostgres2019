@@ -1,0 +1,15 @@
+C:\Users\Erik\Documents\APP DESA\INVENTARIO\INV01.DO\bin\Debug\INV01.DO.dll.config
+C:\Users\Erik\Documents\APP DESA\INVENTARIO\INV01.DO\bin\Debug\INV01.DO.dll
+C:\Users\Erik\Documents\APP DESA\INVENTARIO\INV01.DO\bin\Debug\INV01.DO.pdb
+C:\Users\Erik\Documents\APP DESA\INVENTARIO\INV01.DO\bin\Debug\EntityFramework.dll
+C:\Users\Erik\Documents\APP DESA\INVENTARIO\INV01.DO\bin\Debug\EntityFramework.xml
+C:\Users\Erik\Documents\APP DESA\INVENTARIO\INV01.DO\obj\Debug\INV01.DO.dll
+C:\Users\Erik\Documents\APP DESA\INVENTARIO\INV01.DO\obj\Debug\INV01.DO.pdb
+C:\Users\Erik\Documents\APP SOURCE\INV01\INVENTARIO\INV01.DO\bin\Debug\INV01.DO.dll.config
+C:\Users\Erik\Documents\APP SOURCE\INV01\INVENTARIO\INV01.DO\bin\Debug\INV01.DO.dll
+C:\Users\Erik\Documents\APP SOURCE\INV01\INVENTARIO\INV01.DO\bin\Debug\INV01.DO.pdb
+C:\Users\Erik\Documents\APP SOURCE\INV01\INVENTARIO\INV01.DO\bin\Debug\EntityFramework.dll
+C:\Users\Erik\Documents\APP SOURCE\INV01\INVENTARIO\INV01.DO\bin\Debug\EntityFramework.xml
+C:\Users\Erik\Documents\APP SOURCE\INV01\INVENTARIO\INV01.DO\obj\Debug\INV01.DO.dll
+C:\Users\Erik\Documents\APP SOURCE\INV01\INVENTARIO\INV01.DO\obj\Debug\INV01.DO.pdb
+C:\Users\Erik\Documents\APP SOURCE\INV01\INVENTARIO\INV01.DO\obj\Debug\INV01.DO.csprojResolveAssemblyReference.cache

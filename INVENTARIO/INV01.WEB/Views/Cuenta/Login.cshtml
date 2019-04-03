@@ -1,0 +1,52 @@
+﻿@model INV01.WEB.Models.LoginModel
+
+
+@{
+    ViewBag.Title = "Login";
+}
+
+@*@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        <h1>Login</h1>
+    </div>
+</body>
+</html>*@
+
+
+	<div class="page-content container">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<div class="login-wrapper">
+			        <div class="box">
+			            <div class="content-wrap">
+			                <h6>Iniciar Sesión</h6>
+                                @using (Html.BeginForm("Login", "Cuenta", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { }))
+                                {
+                                    @Html.AntiForgeryToken()
+
+                                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="form-group">
+                                        @Html.TextBoxFor(m => m.UserName, new{ @class = "form-control", id = "login-username", placeholder="Usuario" })                      
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", id = "login-password", placeholder = "Password" })                      
+                                    </div>
+                                      <button id="login" class="btn btn-primary signup" type="submit">Entrar</button>
+                                }           
+			            </div>
+			        </div>
+			    </div>
+			</div>
+		</div>
+	</div>

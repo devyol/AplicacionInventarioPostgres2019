@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="INVENTARIOModeloStoreContainer" CdmEntityContainer="EntitiesINV01">
+    <EntitySetMapping Name="inv01_bitacora_producto">
+      <EntityTypeMapping TypeName="INVENTARIOModelo.inv01_bitacora_producto">
+        <MappingFragment StoreEntitySet="inv01_bitacora_producto">
+          <ScalarProperty Name="idbitacora" ColumnName="idbitacora" />
+          <ScalarProperty Name="idproducto" ColumnName="idproducto" />
+          <ScalarProperty Name="descripcion_anterior" ColumnName="descripcion_anterior" />
+          <ScalarProperty Name="descripcion_actual" ColumnName="descripcion_actual" />
+          <ScalarProperty Name="precio_costo_anterior" ColumnName="precio_costo_anterior" />
+          <ScalarProperty Name="precio_costo_actual" ColumnName="precio_costo_actual" />
+          <ScalarProperty Name="imagen_anterior" ColumnName="imagen_anterior" />
+          <ScalarProperty Name="imagen_actual" ColumnName="imagen_actual" />
+          <ScalarProperty Name="estado_registro_anterior" ColumnName="estado_registro_anterior" />
+          <ScalarProperty Name="estado_registro_actual" ColumnName="estado_registro_actual" />
+          <ScalarProperty Name="usuario_creacion" ColumnName="usuario_creacion" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inv01_categoria">
+      <EntityTypeMapping TypeName="INVENTARIOModelo.inv01_categoria">
+        <MappingFragment StoreEntitySet="inv01_categoria">
+          <ScalarProperty Name="idcategoria" ColumnName="idcategoria" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
+          <ScalarProperty Name="usuario_creacion" ColumnName="usuario_creacion" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="usuario_modificacion" ColumnName="usuario_modificacion" />
+          <ScalarProperty Name="fecha_modificacion" ColumnName="fecha_modificacion" />
+          <ScalarProperty Name="usuario_anulacion" ColumnName="usuario_anulacion" />
+          <ScalarProperty Name="fecha_nulacion" ColumnName="fecha_nulacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inv01_cliente">
+      <EntityTypeMapping TypeName="INVENTARIOModelo.inv01_cliente">
+        <MappingFragment StoreEntitySet="inv01_cliente">
+          <ScalarProperty Name="idcliente" ColumnName="idcliente" />
+          <ScalarProperty Name="nit" ColumnName="nit" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="nombre_completo" ColumnName="nombre_completo" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
+          <ScalarProperty Name="usuario_creacion" ColumnName="usuario_creacion" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="usuario_modificacion" ColumnName="usuario_modificacion" />
+          <ScalarProperty Name="fecha_modificacion" ColumnName="fecha_modificacion" />
+          <ScalarProperty Name="usuario_anulacion" ColumnName="usuario_anulacion" />
+          <ScalarProperty Name="fecha_nulacion" ColumnName="fecha_nulacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inv01_envio_detalle">
+      <EntityTypeMapping TypeName="INVENTARIOModelo.inv01_envio_detalle">
+        <MappingFragment StoreEntitySet="inv01_envio_detalle">
+          <ScalarProperty Name="iddetalle" ColumnName="iddetalle" />
+          <ScalarProperty Name="idenvio" ColumnName="idenvio" />
+          <ScalarProperty Name="idproducto" ColumnName="idproducto" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="precio_unitario" ColumnName="precio_unitario" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
+          <ScalarProperty Name="usuario_creacion" ColumnName="usuario_creacion" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="usuario_modificacion" ColumnName="usuario_modificacion" />
+          <ScalarProperty Name="fecha_modificacion" ColumnName="fecha_modificacion" />
+          <ScalarProperty Name="usuario_anulacion" ColumnName="usuario_anulacion" />
+          <ScalarProperty Name="fecha_nulacion" ColumnName="fecha_nulacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inv01_envio_encabezado">
+      <EntityTypeMapping TypeName="INVENTARIOModelo.inv01_envio_encabezado">
+        <MappingFragment StoreEntitySet="inv01_envio_encabezado">
+          <ScalarProperty Name="idenvio" ColumnName="idenvio" />
+          <ScalarProperty Name="envio" ColumnName="envio" />
+          <ScalarProperty Name="idmovimiento" ColumnName="idmovimiento" />
+          <ScalarProperty Name="idcliente" ColumnName="idcliente" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="total_letras" ColumnName="total_letras" />
+          <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
+          <ScalarProperty Name="usuario_creacion" ColumnName="usuario_creacion" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="usuario_modificacion" ColumnName="usuario_modificacion" />
+          <ScalarProperty Name="fecha_modificacion" ColumnName="fecha_modificacion" />
+          <ScalarProperty Name="usuario_anulacion" ColumnName="usuario_anulacion" />
+          <ScalarProperty Name="fecha_nulacion" ColumnName="fecha_nulacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inv01_inventario">
+      <EntityTypeMapping TypeName="INVENTARIOModelo.inv01_inventario">
+        <MappingFragment StoreEntitySet="inv01_inventario">
+          <ScalarProperty Name="idinventario" ColumnName="idinventario" />
+          <ScalarProperty Name="idproducto" ColumnName="idproducto" />
+          <ScalarProperty Name="factura_proveedor" ColumnName="factura_proveedor" />
+          <ScalarProperty Name="precio_actual" ColumnName="precio_actual" />
+          <ScalarProperty Name="existencia" ColumnName="existencia" />
+          <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
+          <ScalarProperty Name="usuario_creacion" ColumnName="usuario_creacion" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="usuario_modificacion" ColumnName="usuario_modificacion" />
+          <ScalarProperty Name="fecha_modificacion" ColumnName="fecha_modificacion" />
+          <ScalarProperty Name="usuario_anulacion" ColumnName="usuario_anulacion" />
+          <ScalarProperty Name="fecha_nulacion" ColumnName="fecha_nulacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inv01_inventario_movimiento">
+      <EntityTypeMapping TypeName="INVENTARIOModelo.inv01_inventario_movimiento">
+        <MappingFragment StoreEntitySet="inv01_inventario_movimiento">
+          <ScalarProperty Name="idmovimiento" ColumnName="idmovimiento" />
+          <ScalarProperty Name="idproducto" ColumnName="idproducto" />
+          <ScalarProperty Name="descripcion_producto" ColumnName="descripcion_producto" />
+          <ScalarProperty Name="idtipo_mov_inv" ColumnName="idtipo_mov_inv" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="numero_envio" ColumnName="numero_envio" />
+          <ScalarProperty Name="habia" ColumnName="habia" />
+          <ScalarProperty Name="hay" ColumnName="hay" />
+          <ScalarProperty Name="existencia" ColumnName="existencia" />
+          <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
+          <ScalarProperty Name="usuario_creacion" ColumnName="usuario_creacion" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="usuario_modificacion" ColumnName="usuario_modificacion" />
+          <ScalarProperty Name="fecha_modificacion" ColumnName="fecha_modificacion" />
+          <ScalarProperty Name="usuario_anulacion" ColumnName="usuario_anulacion" />
+          <ScalarProperty Name="fecha_nulacion" ColumnName="fecha_nulacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inv01_movimiento">
+      <EntityTypeMapping TypeName="INVENTARIOModelo.inv01_movimiento">
+        <MappingFragment StoreEntitySet="inv01_movimiento">
+          <ScalarProperty Name="idmovimiento" ColumnName="idmovimiento" />
+          <ScalarProperty Name="idtipo_mov" ColumnName="idtipo_mov" />
+          <ScalarProperty Name="idtipo_pago" ColumnName="idtipo_pago" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="cantidad_letras" ColumnName="cantidad_letras" />
+          <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
+          <ScalarProperty Name="usuario_creacion" ColumnName="usuario_creacion" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="usuario_modificacion" ColumnName="usuario_modificacion" />
+          <ScalarProperty Name="fecha_modificacion" ColumnName="fecha_modificacion" />
+          <ScalarProperty Name="usuario_anulacion" ColumnName="usuario_anulacion" />
+          <ScalarProperty Name="fecha_nulacion" ColumnName="fecha_nulacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inv01_producto">
+      <EntityTypeMapping TypeName="INVENTARIOModelo.inv01_producto">
+        <MappingFragment StoreEntitySet="inv01_producto">
+          <ScalarProperty Name="idproducto" ColumnName="idproducto" />
+          <ScalarProperty Name="codigo_barra" ColumnName="codigo_barra" />
+          <ScalarProperty Name="idcategoria" ColumnName="idcategoria" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="precio_costo" ColumnName="precio_costo" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+          <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
+          <ScalarProperty Name="usuario_creacion" ColumnName="usuario_creacion" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="usuario_modificacion" ColumnName="usuario_modificacion" />
+          <ScalarProperty Name="fecha_modificacion" ColumnName="fecha_modificacion" />
+          <ScalarProperty Name="usuario_anulacion" ColumnName="usuario_anulacion" />
+          <ScalarProperty Name="fecha_nulacion" ColumnName="fecha_nulacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inv01_producto_perdida">
+      <EntityTypeMapping TypeName="INVENTARIOModelo.inv01_producto_perdida">
+        <MappingFragment StoreEntitySet="inv01_producto_perdida">
+          <ScalarProperty Name="idperdida" ColumnName="idperdida" />
+          <ScalarProperty Name="idproducto" ColumnName="idproducto" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="precio_costo" ColumnName="precio_costo" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+          <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
+          <ScalarProperty Name="usuario_creacion" ColumnName="usuario_creacion" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="usuario_modificacion" ColumnName="usuario_modificacion" />
+          <ScalarProperty Name="fecha_modificacion" ColumnName="fecha_modificacion" />
+          <ScalarProperty Name="usuario_anulacion" ColumnName="usuario_anulacion" />
+          <ScalarProperty Name="fecha_nulacion" ColumnName="fecha_nulacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inv01_rol">
+      <EntityTypeMapping TypeName="INVENTARIOModelo.inv01_rol">
+        <MappingFragment StoreEntitySet="inv01_rol">
+          <ScalarProperty Name="rol" ColumnName="rol" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
+          <ScalarProperty Name="usuario_creacion" ColumnName="usuario_creacion" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="usuario_modificacion" ColumnName="usuario_modificacion" />
+          <ScalarProperty Name="fecha_modificacion" ColumnName="fecha_modificacion" />
+          <ScalarProperty Name="usuario_anulacion" ColumnName="usuario_anulacion" />
+          <ScalarProperty Name="fecha_nulacion" ColumnName="fecha_nulacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inv01_tipo_mov_inventario">
+      <EntityTypeMapping TypeName="INVENTARIOModelo.inv01_tipo_mov_inventario">
+        <MappingFragment StoreEntitySet="inv01_tipo_mov_inventario">
+          <ScalarProperty Name="idtipo_mov_inv" ColumnName="idtipo_mov_inv" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
+          <ScalarProperty Name="usuario_creacion" ColumnName="usuario_creacion" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="usuario_modificacion" ColumnName="usuario_modificacion" />
+          <ScalarProperty Name="fecha_modificacion" ColumnName="fecha_modificacion" />
+          <ScalarProperty Name="usuario_anulacion" ColumnName="usuario_anulacion" />
+          <ScalarProperty Name="fecha_nulacion" ColumnName="fecha_nulacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inv01_tipo_movimiento">
+      <EntityTypeMapping TypeName="INVENTARIOModelo.inv01_tipo_movimiento">
+        <MappingFragment StoreEntitySet="inv01_tipo_movimiento">
+          <ScalarProperty Name="idtipo_mov" ColumnName="idtipo_mov" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
+          <ScalarProperty Name="usuario_creacion" ColumnName="usuario_creacion" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="usuario_modificacion" ColumnName="usuario_modificacion" />
+          <ScalarProperty Name="fecha_modificacion" ColumnName="fecha_modificacion" />
+          <ScalarProperty Name="usuario_anulacion" ColumnName="usuario_anulacion" />
+          <ScalarProperty Name="fecha_nulacion" ColumnName="fecha_nulacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inv01_tipo_pago">
+      <EntityTypeMapping TypeName="INVENTARIOModelo.inv01_tipo_pago">
+        <MappingFragment StoreEntitySet="inv01_tipo_pago">
+          <ScalarProperty Name="idtipo_pago" ColumnName="idtipo_pago" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
+          <ScalarProperty Name="usuario_creacion" ColumnName="usuario_creacion" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="usuario_modificacion" ColumnName="usuario_modificacion" />
+          <ScalarProperty Name="fecha_modificacion" ColumnName="fecha_modificacion" />
+          <ScalarProperty Name="usuario_anulacion" ColumnName="usuario_anulacion" />
+          <ScalarProperty Name="fecha_nulacion" ColumnName="fecha_nulacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inv01_usuario">
+      <EntityTypeMapping TypeName="INVENTARIOModelo.inv01_usuario">
+        <MappingFragment StoreEntitySet="inv01_usuario">
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
+          <ScalarProperty Name="usuario_creacion" ColumnName="usuario_creacion" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="usuario_modificacion" ColumnName="usuario_modificacion" />
+          <ScalarProperty Name="fecha_modificacion" ColumnName="fecha_modificacion" />
+          <ScalarProperty Name="usuario_anulacion" ColumnName="usuario_anulacion" />
+          <ScalarProperty Name="fecha_nulacion" ColumnName="fecha_nulacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inv01_usuario_correlativo">
+      <EntityTypeMapping TypeName="INVENTARIOModelo.inv01_usuario_correlativo">
+        <MappingFragment StoreEntitySet="inv01_usuario_correlativo">
+          <ScalarProperty Name="idcorrelativo" ColumnName="idcorrelativo" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="correlativo_actual" ColumnName="correlativo_actual" />
+          <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
+          <ScalarProperty Name="usuario_creacion" ColumnName="usuario_creacion" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="usuario_modificacion" ColumnName="usuario_modificacion" />
+          <ScalarProperty Name="fecha_modificacion" ColumnName="fecha_modificacion" />
+          <ScalarProperty Name="usuario_anulacion" ColumnName="usuario_anulacion" />
+          <ScalarProperty Name="fecha_nulacion" ColumnName="fecha_nulacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inv01_usuario_rol">
+      <EntityTypeMapping TypeName="INVENTARIOModelo.inv01_usuario_rol">
+        <MappingFragment StoreEntitySet="inv01_usuario_rol">
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="rol" ColumnName="rol" />
+          <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
+          <ScalarProperty Name="usuario_creacion" ColumnName="usuario_creacion" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="usuario_modificacion" ColumnName="usuario_modificacion" />
+          <ScalarProperty Name="fecha_modificacion" ColumnName="fecha_modificacion" />
+          <ScalarProperty Name="usuario_anulacion" ColumnName="usuario_anulacion" />
+          <ScalarProperty Name="fecha_nulacion" ColumnName="fecha_nulacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
